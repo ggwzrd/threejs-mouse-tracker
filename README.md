@@ -3,6 +3,7 @@
 
 # threejs-mouse-tracker
 
+[![DeepScan grade](https://deepscan.io/api/teams/19163/projects/22510/branches/665920/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=19163&pid=22510&bid=665920)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ggwzrd/threejs-mouse-tracker)
 ![npm bundle size](https://img.shields.io/bundlephobia/min/threejs-mouse-tracker)
 ![npm](https://img.shields.io/npm/v/threejs-mouse-tracker)

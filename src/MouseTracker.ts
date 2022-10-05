@@ -6,13 +6,21 @@ import {
   Mesh,
   Intersection,
   Raycaster,
+  // @ts-expect-error
   SphereBufferGeometry,
   MeshBasicMaterial
 } from 'three';
 
+interface Options {
+  mesh: THREE.Object3D
+  camera: THREE.Camera
+  tracker?: (xyz: THREE.Vector3) => any
+  debug?: boolean
+}
+
 class MouseTracker {
   pointer: Vector2;
-  object: Mesh;
+  object?: Mesh;
 
   readonly intersects: Intersection[] = [];
 
@@ -25,8 +33,8 @@ class MouseTracker {
   constructor(opts: Options) {
     this.mesh = opts.mesh;
     this.camera = opts.camera;
-    this.tracker = opts.tracker || (() => null);
-    this.debug = opts.debug || false;
+    this.tracker = opts.tracker ?? (() => null);
+    this.debug = opts.debug ?? false;
     this.raycaster = new Raycaster();
     this.pointer = new Vector2();
 
@@ -57,7 +65,7 @@ class MouseTracker {
         this.tracker(this.intersects[0].point);
 
         if (this.debug) {
-          this.object.position.copy(this.intersects[0].point);
+          this.object?.position.copy(this.intersects[0].point);
         }
       }
     });

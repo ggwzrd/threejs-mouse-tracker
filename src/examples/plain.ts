@@ -18,6 +18,7 @@ function plainExample(): void {
   camera.rotateX(-Math.PI / 4);
 
   const wireframe = new THREE.Mesh(
+    // @ts-expect-error
     new THREE.PlaneBufferGeometry(10, 10, 10, 10).rotateX(-Math.PI / 2),
     new THREE.MeshBasicMaterial({
       color: 0xff0000,
@@ -34,7 +35,9 @@ function plainExample(): void {
     debug: true
   });
 
-  scene.add(mouse.object);
+  if (mouse.object) {
+    scene.add(mouse.object);
+  }
 
   renderer.render(scene, camera);
 
