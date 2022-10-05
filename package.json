@@ -1,6 +1,6 @@
 {
   "name": "threejs-mouse-tracker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Track your mouse movement on a threejs object",
   "repository": "https://github.com/ggwzrd/threejs-mouse-tracker",
   "main": "lib/bundle-esm.js",
